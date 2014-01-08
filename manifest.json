@@ -1,0 +1,16 @@
+{
+    "name": "Hello World!",
+    "description": "My first Chrome App.",
+    "version": "0.1",
+    "background": {
+        "scripts": ["jquery-1.10.2.min.js", "background.js"]
+    },
+    "icons": { "16": "calculator-16.png", "128": "calculator-128.png" },
+    "permissions": [ "https://api.github.com/*", "https://github.com/*", "tabs" ],
+    "manifest_version": 2,
+    "page_action": {
+        "default_icon": {
+            "19": "calculator-16.png"
+        }
+    }
+}
