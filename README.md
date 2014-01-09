@@ -5,7 +5,7 @@ Chrome extension that plots traffic data from all your public GitHub repositorie
 ![Chart](http://i.imgur.com/gC7rROT.png)
 
 ## How to use it
-- install it from Chrome Web Store or via `Load unpacked extension` feature
+- install it from [Chrome Web Store](https://chrome.google.com/webstore/detail/allgithubtraffic/ackoiggbcoegfdkobllpnglglmkedpij) or via "Load unpacked extension" feature on the extensions page
 - go to github.com
 - log in
 - click extension icon in the address bar
