@@ -1,16 +1,16 @@
 {
-    "name": "Hello World!",
-    "description": "My first Chrome App.",
+    "name": "AllGitHubTraffic",
+    "description": "Show traffic data from all your GitHub repositories on one chart.",
     "version": "0.1",
     "background": {
-        "scripts": ["jquery-1.10.2.min.js", "background.js"]
+        "scripts": ["background.js"]
     },
-    "icons": { "16": "calculator-16.png", "128": "calculator-128.png" },
+    "icons": { "20": "icon-20.png", "128": "icon-128.png" },
     "permissions": [ "https://api.github.com/*", "https://github.com/*", "tabs" ],
     "manifest_version": 2,
     "page_action": {
         "default_icon": {
-            "19": "calculator-16.png"
+            "19": "icon-20.png"
         }
     }
 }

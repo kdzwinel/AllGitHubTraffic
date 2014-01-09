@@ -1,0 +1,42 @@
+#progress p {
+    display: none;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+}
+#progress p.visible {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+#progress p.alert {
+    width: auto;
+}
+#progress p:nth-child(1) {
+    display: block;
+}
+#progress p:nth-child(2) {
+    display: block;
+    opacity: 0.5;
+}
+#progress p:nth-child(3) {
+    display: block;
+    opacity: 0.25;
+}
+#progress {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+    text-align: center;
+}
+
+#chart {
+    width: 100%;
+    height: 500px;
+}
+
+.nvtooltip h3 {
+    font-size: 16px;
+}

@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title></title>
-    <link href="libs/nv.d3.min.css" rel="stylesheet" />
+    <title>All GitHub Traffic</title>
+    <meta charset="utf-8">
+    <link href="libs/nv.d3.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="container">
+    <div class="page-header">
+        <h1>All GitHub traffic</h1>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="hideForks"> Hide forks
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="hideNoTraffic"> Hide repositories with no traffic
+        </label>
+    </div>
+    <div id="progress"></div>
+    <div id="chart">
+        <svg></svg>
+    </div>
+    <table class="table table-striped"></table>
 
-<div id="chart" style="width:100%;height:100%"><svg></svg></div>
+    <hr/>
+    <p>This small project was made with <a href="http://d3js.org/">D3.js</a>, <a href="http://nvd3.org/">NVD3.js</a> and <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+    <p>If you found a bug or have a feature request, please create an issue on <a href="https://github.com/kdzwinel/AllGitHubTraffic">GitHub</a> or contact me directly (kdzwinel@gmail.com, @kdzwinel).</p>
 
-<script src="jquery-1.10.2.min.js"></script>
+    <iframe src="http://ghbtns.com/github-btn.html?user=kdzwinel&repo=AllGitHubTraffic&type=watch&count=true&size=small"
+            allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
+
+    <iframe allowtransparency="true" frameborder="0" scrolling="no"
+            src="https://platform.twitter.com/widgets/tweet_button.html?url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fsnappysnippet%2Fblfngdefapoapkcdibbdkigpeaffgcil"
+            style="width:115px; height:21px;"></iframe>
+
+    <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21"
+            scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px; width:115px;"
+            allowTransparency="true"></iframe>
+
+</div>
+
+<script src="libs/jquery-1.10.2.min.js"></script>
 <script src="libs/d3.v2.min.js"></script>
 <script src="libs/nv.d3.min.js"></script>
 <script src="main.js"></script>
