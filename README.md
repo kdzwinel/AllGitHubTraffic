@@ -2,7 +2,7 @@ AllGitHubTraffic
 ================
 Chrome extension that plots traffic data from all your public GitHub repositories on one chart.
 
-![Chart](http://imgur.com/gC7rROT)
+![Chart](http://i.imgur.com/gC7rROT.png)
 
 ## How to use it
 - install it from Chrome Web Store or via `Load unpacked extension` feature
