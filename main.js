@@ -2,7 +2,7 @@
     "use strict";
 
     $.ajaxSetup({
-        timeout: 3000
+        timeout: 5000
     });
 
     var stats = [],
@@ -43,7 +43,10 @@
 
                     output.push({
                         full_name: repo.full_name,
-                        fork: repo.fork
+                        fork: repo.fork,
+                        forks_count: repo.forks_count,
+                        stargazers_count: repo.stargazers_count,
+                        watchers_count: repo.watchers_count
                     });
                 }
 
@@ -92,7 +95,10 @@
             }),
             fork: repo.fork,
             views: data.summary.total,
-            visitors: data.summary.unique
+            visitors: data.summary.unique,
+            stargazers_count: repo.stargazers_count,
+            watchers_count: repo.watchers_count,
+            forks_count: repo.forks_count
         });
     }
 
@@ -133,7 +139,7 @@
 
     function showTable(data) {
             // the columns you'd like to display
-            var columns = ["Name", "Fork", "Views", "Visitors"];
+            var columns = ["Name", "Fork", "Forks", "Stars", "Views", "Visitors"];
 
             table = d3.select("table");
             var thead = table.append("thead"),
@@ -160,16 +166,19 @@
                         {
                             column: "Name",
                             value: '<a href="https://github.com/' + repo.key + '/graphs/traffic">' + repo.key + '</a>'
-                        },
-                        {
+                        },{
                             column: "Fork",
                             value: repo.fork ? '✓' : ''
-                        },
-                        {
+                        },{
+                            column: "Forks",
+                            value: repo.forks_count
+                        },{
+                            column: "Stars",
+                            value: repo.stargazers_count
+                        },{
                             column: "Views",
                             value: repo.views
-                        },
-                        {
+                        },{
                             column: "Visitors",
                             value: repo.visitors
                         }
