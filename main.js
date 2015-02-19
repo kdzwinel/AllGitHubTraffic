@@ -78,7 +78,7 @@
 
             deferred.resolve(stats);
         }, function () {
-            deferred.reject('Failed fetching analytics data for your repositories. Probably network issues or GitHub blocked access to this data.');
+            deferred.reject('Failed fetching analytics data for your repositories. Probably network issues or one of your repositories is empty.');
         });
 
         return deferred.promise();
