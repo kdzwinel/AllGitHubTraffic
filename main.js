@@ -15,9 +15,10 @@
         deferred.notify('Fetching GitHub username.');
 
         $.get('https://github.com',function (data) {
-            var name = $(data).find('#user-links .name').text().trim();
+            var matches = data.match(/<meta name="user\-login" content="([^"]+)">/);
 
-            if (name.length) {
+            if (matches.length && matches[1].length) {
+                var name = matches[1].trim();
                 deferred.resolve(name);
             } else {
                 deferred.reject('Failed fetching GitHub username. You are probably not logged in.');
@@ -61,17 +62,28 @@
         return deferred.promise();
     }
 
-    function getReposTraffic(arr) {
+    function getReposTraffic(repos) {
         var deferred = new $.Deferred();
         var promises = [];
 
         deferred.notify('Fetching analytics data for all repositories.');
 
-        arr.forEach(function (repo) {
-            promises.push($.getJSON('https://github.com/' + repo.full_name + '/graphs/traffic-data', addRepoTraffic.bind(null, repo)));
+        var headers = new Headers();
+        headers.set('Accept', 'application/json');
+
+        var myInit = {
+            headers: headers,
+            credentials: 'include',
+            mode: 'cors'
+        };
+
+        repos.forEach(function (repo) {
+            promises.push(fetch('https://github.com/' + repo.full_name + '/graphs/traffic-data', myInit)
+                .then(response => response.json())
+                .then(addRepoTraffic.bind(null, repo)));
         });
 
-        $.when.apply($, promises).then(function () {
+        Promise.all(promises).then(function () {
             stats = stats.sort(function(a,b){
                 return (a.views > b.views) ? -1 : 1;
             });
