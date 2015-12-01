@@ -1,7 +1,7 @@
 {
     "name": "AllGitHubTraffic",
     "description": "Show traffic data from all your GitHub repositories on one chart.",
-    "version": "0.12",
+    "version": "0.13",
     "background": {
         "scripts": ["background.js"]
     },
